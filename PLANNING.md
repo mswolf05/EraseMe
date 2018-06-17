@@ -38,11 +38,11 @@ activity described above on one platform.
     + Click on "Delete"
   5. For each Tagged Photo:
     + Click on the edit pencil icon
-      a. To remove:
+      + To remove:
         + Click on "Remove Tag/Report"
         + Answer the survey - "Whats going on here?"
         + Click continue
-      b. To hide:
+      + To hide:
         + click "Hide from timeline"
    6. For all other activity:
     + Click on the edit pencil icon

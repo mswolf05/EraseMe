@@ -11,8 +11,7 @@ Any social media account holder that is trying to restart his or her social medi
 Some social media platforms such as Facebook and Twitter have been around for over 14 years.
 Users 14 years ago vs. now have very different personalities, behaviors, beliefs, etc.
 Posts, comments and other activity that users once performed may not be an accurate representation of these users today. 
-To help these users recreate their social media presence, there needs to be a quick and easy way to get rid of the social media
-activity described above on one platform.
+To help these users recreate their social media presence, there needs to be a quick, easy and central way to get rid of unwanted social media activity. 
 
 ### As-is Process Description
 

@@ -50,11 +50,13 @@ activity described above on one platform.
 
 ### To-be Process Description
   
-  1. 
-  1. Obtain a list of student repository URLs.
-  2. Run a script to automatically download all the repositories and check for existence of specified files, and produce a CSV file report of the results.
-  3. Upload the CSV file report into the Google Sheets gradebook.
-
+  1. Select which platforms to remove activity from.
+  2. Provide credential for the chosen platforms.
+  3. Run a script that will gather and categorize activity as outlined below:
+  + Twitter: tweets, retweets, likes.
+  + Facebook: posts, likes, tags, other.
+  4. Present the activity to the user in pop-up that allows the user to unselect certain activity that he or she would like to keep.
+  5. Run a script that will remove all selected media activity.
 
 ## Information Requirements
 

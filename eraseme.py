@@ -59,6 +59,10 @@ def handle_button_click():
     my_message.pack(side=LEFT, fill=BOTH, expand=1)
     button2.pack()
 
+def handle_button2_click():
+    p = Popen("eraseme_activity_report.csv", shell=True)
+    master.destroy()    
+    
 # OAuth process, using the keys and tokens
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)

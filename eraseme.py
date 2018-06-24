@@ -62,6 +62,13 @@ def handle_button_click():
 def handle_button2_click():
     p = Popen("eraseme_activity_report.csv", shell=True)
     master.destroy()    
+
+def on_closing():
+    filename = "eraseme_activity_report.csv"
+    if os.path.exists(filename):
+        os.remove(filename)
+        print("All twitter activity reports removed from the EraseMe application.")
+    master.destroy()    
     
 # OAuth process, using the keys and tokens
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)

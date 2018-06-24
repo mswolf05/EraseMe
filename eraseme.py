@@ -39,3 +39,34 @@ for tweet in timeline:
         "tweet_delete": True
         }
         tweet_list.append(info)
+
+# prompt user for which tweets/retweets/likes to keep
+master = Tk()
+
+listbox_label = Label(text="Select the twitter activity to KEEP:\n (all unselected tweets, retweets and likes will be deleted)", width=150)
+listbox = Listbox(selectmode=EXTENDED, height=30)
+button = Button(text="Delete Other Tweets", bg = "#%02x%02x%02x" % (228, 190, 190), command=handle_button_click)
+
+i = 0
+for twt in tweet_list:
+    i += 1
+    type = "tweet"
+    if twt["retweet"]:
+        type = "retweet"
+    if twt["like"]:
+        type = "like"
+
+    tweet_list_item = str(twt["tweet_id"]) + " (" + type + "): " + twt["tweet_text"]
+
+    # strip out extra unrecognized characters from tweet - step need for tkinter gui
+    char_list = [tweet_list_item[j] for j in range(len(tweet_list_item)) if ord(tweet_list_item[j]) in range(65536)]
+    tweet_list_item=""
+    for j in char_list:
+        tweet_list_item=tweet_list_item+j
+    listbox.insert(i, tweet_list_item)
+
+listbox_label.pack()
+listbox.pack(side=LEFT, fill=BOTH, expand=1)
+button.pack()
+master.protocol("WM_DELETE_WINDOW", on_closing)
+master.mainloop()

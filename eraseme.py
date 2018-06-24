@@ -12,6 +12,53 @@ consumer_secret = input("Consumer Secret (API Secret): ")
 access_token = input("Acess Token: ")
 access_token_secret = input("Acess Token Secret: ")
 
+def handle_button_click():
+    item_id_keep = []
+    for index in listbox.curselection():
+        item = listbox.get(index)
+        find_id = item.find(" (")
+        item_id = item[:find_id]
+        item_id_keep.append(str(item_id))
+
+    # delete unselected twitter activity
+    for dt in tweet_list:
+
+        ids_deleted = []
+        if str(dt["tweet_id"]) not in item_id_keep:
+            api.destroy_status(dt["tweet_id"])
+            ids_deleted.append(str(dt["tweet_id"]))
+
+# log and report activity
+    csv_file_path = "eraseme_activity_report.csv"
+
+    with open(csv_file_path, "w") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=["tweet_id", "tweet_text", "activity_type", "date_created", "action"])
+        writer.writeheader()
+
+        for t in tweet_list:
+            type = "tweet"
+            if t["retweet"]:
+                type = "retweet"
+            if t["like"]:
+                type = "like"
+
+            if str(t["tweet_id"]) in item_id_keep:
+                em_action = "KEPT"
+            else:
+                em_action = "DELETED"
+
+            writer.writerow({"tweet_id": t["tweet_id"], "tweet_text": t["tweet_text"].encode("utf-8"), "activity_type": type, "date_created": t["tweet_created"], "action": em_action})
+
+    #master.destroy()
+    button.destroy()
+    listbox.destroy()
+    listbox_label.destroy()
+
+    my_message = Message(text="SUCCESS! Your tweets have been deleted from your timeline.\nIf you would like to see the report, click 'Open Report' to the right.\nOtherwise, in keeping with the EraseMe company values, the report and all of your history will be removed from the EraseMe application.", width=1000)
+    button2 = Button(text="Open Report", bg = "#%02x%02x%02x" % (112, 173, 71), command=handle_button2_click)
+    my_message.pack(side=LEFT, fill=BOTH, expand=1)
+    button2.pack()
+
 # OAuth process, using the keys and tokens
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)

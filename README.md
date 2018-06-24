@@ -8,3 +8,8 @@
   + consumer_secret = Consumer Secret (API Secret)
   + acess_token = Access Token
   + access_secret = Access Token Secret
+
+# Run Application
+1. In your Command Prompt, navigate to the directory in which you saved the file
+2. To run the program, issue the following command: erase_me.py
+3. Note: if your tweets contain emojis, you may run into an error. If this is the case, exit the tkinter window, the program will still operate as expected.

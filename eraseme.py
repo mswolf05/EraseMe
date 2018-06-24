@@ -128,3 +128,5 @@ listbox.pack(side=LEFT, fill=BOTH, expand=1)
 button.pack()
 master.protocol("WM_DELETE_WINDOW", on_closing)
 master.mainloop()
+
+print("Thank you for using the EraseMe service!")

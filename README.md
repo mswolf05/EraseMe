@@ -1,6 +1,6 @@
 # Installation
 1. Navigate to the Twitter Apps Platform: https://apps.twitter.com/app/15379770/show.
-2. Log into your Twitter account and create a new app: https://apps.twitter.com/app/new (for website, input the course repository).
+2. Log into the Twitter account that you would like to alter and create a new app: https://apps.twitter.com/app/new (for website, input the course repository).
 3. Once app is created, navigate to the "Key and Access Tokens" tab.
 4. At the bottom, click "Create my access token".
 5. Have the following variables handy when you run the application. The program requires them.

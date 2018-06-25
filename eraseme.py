@@ -6,6 +6,7 @@ import csv
 from tkinter import *
 from datetime import datetime, timedelta
 from subprocess import Popen
+import pytest
 
 consumer_key = input("Consumer Key (API Key): ")
 consumer_secret = input("Consumer Secret (API Secret): ")

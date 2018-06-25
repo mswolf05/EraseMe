@@ -4,10 +4,10 @@
 3. Once app is created, navigate to the "Key and Access Tokens" tab.
 4. At the bottom, click "Create my access token".
 5. Have the following variables handy when you run the application. The program requires them.
-  + consumer_key = Consumer Key (API Key)
-  + consumer_secret = Consumer Secret (API Secret)
-  + acess_token = Access Token
-  + access_secret = Access Token Secret
+  + Consumer Key (API Key)
+  + Consumer Secret (API Secret)
+  + Access Token
+  + Access Token Secret
 
 # Run Application
 1. In your Command Prompt, navigate to the directory in which you saved the file
